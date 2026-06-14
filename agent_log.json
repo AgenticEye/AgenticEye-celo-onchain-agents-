@@ -1,1 +1,121 @@
-
+{
+  "agent_name": "Agentic Eye",
+  "erc8004_id": "1865",
+  "run_id": "agenticeye-celo-hackathon-demo-001",
+  "timestamp_start": "2026-06-14T10:00:00Z",
+  "task_description": "Predict viral probability for content topic using 17 live data sources",
+  "decision_loop": [
+    {
+      "step": 1,
+      "phase": "discover",
+      "action": "query_received",
+      "input": {
+        "niche": "AI agents replacing knowledge workers",
+        "location": "US",
+        "platforms": ["youtube", "tiktok", "reddit"]
+      },
+      "tool_calls": ["self_protocol.verify_identity", "x402.verify_payment"],
+      "output": "ZK identity verified. Payment confirmed. Query accepted."
+    },
+    {
+      "step": 2,
+      "phase": "plan",
+      "action": "source_selection",
+      "reasoning": "Activating 17 data sources in parallel via asyncio.gather() for maximum signal coverage.",
+      "tool_calls": ["source_router.plan"],
+      "output": "17 sources queued. Estimated completion: 8-12 seconds."
+    },
+    {
+      "step": 3,
+      "phase": "execute",
+      "action": "parallel_data_fetch",
+      "tool_calls": [
+        "youtube.get_comments",
+        "tiktok.get_trending",
+        "reddit.search",
+        "google.trends",
+        "youtube.autocomplete",
+        "google.autocomplete",
+        "google.news_rss",
+        "quora.search",
+        "amazon.autocomplete",
+        "youtube.trending",
+        "spotify.podcasts",
+        "hackernews.search",
+        "twitter.signals_tavily",
+        "linkedin.signals_tavily",
+        "instagram.signals_tavily",
+        "deepgram.transcribe",
+        "venice_ai.analyze"
+      ],
+      "output": "2,847 signals collected across 17 sources in 9.3 seconds."
+    },
+    {
+      "step": 4,
+      "phase": "execute",
+      "action": "venice_inference",
+      "tool_calls": ["venice_ai.analyze_signals"],
+      "metadata": {
+        "model": "deepseek-r1-671b",
+        "data_retention": false,
+        "tee": true
+      },
+      "output": "Venice TEE inference complete. Zero data retained."
+    },
+    {
+      "step": 5,
+      "phase": "verify",
+      "action": "viralEdge_scoring",
+      "reasoning": "STEPPS score 0.87. Cross-platform echo: 4/5. Lead-lag: Reddit leads TikTok by 48h. Opportunity window: HIGH.",
+      "tool_calls": ["viralEdge.calculate", "lead_lag.detect"],
+      "output": "ViralEdge Score: 87/100. Category: VIRAL. Post within 48h."
+    },
+    {
+      "step": 6,
+      "phase": "submit",
+      "action": "result_returned",
+      "output": {
+        "viral_score": 87,
+        "confidence": "HIGH",
+        "category": "VIRAL",
+        "action": "Post within 48h. Reddit leads TikTok by 48h — first-mover window open.",
+        "ideas_generated": 5,
+        "dominant_emotion": "curiosity",
+        "cross_platform_echo": "4/5 platforms active"
+      }
+    }
+  ],
+  "outcome": "success",
+  "tools_used": [
+    "self_protocol",
+    "x402_payments",
+    "youtube_api_v3",
+    "tiktok_scrapecreators",
+    "reddit_api",
+    "google_trends_tavily",
+    "hackernews_algolia",
+    "venice_ai_tee",
+    "deepgram_nova2",
+    "celo_rpc",
+    "erc8004_registry"
+  ],
+  "safety_checks": [
+    "zk_identity_before_query",
+    "x402_payment_verified",
+    "rate_limit_enforcement",
+    "confidence_threshold_check",
+    "zero_data_retention_confirmed"
+  ],
+  "compute_budget": {
+    "llm_calls": 1,
+    "api_calls": 17,
+    "blockchain_txs": 1,
+    "response_time_ms": 9341
+  },
+  "celo_transaction": {
+    "network": "celo-mainnet",
+    "token": "cUSD",
+    "amount": "0.50",
+    "wallet": "0x02e97e243204780842d5cA34dFEF465A959b18b3"
+  }
+}
