@@ -1,0 +1,52 @@
+{
+  "name": "Agentic Eye",
+  "version": "3.2.0",
+  "description": "Viral content intelligence agent. Predicts which content goes viral using STEPPS scoring across 17 live data sources. Private inference via Venice TEE. Zero data retention.",
+  "operator_wallet": "0x02e97e243204780842d5cA34dFEF465A959b18b3",
+  "erc8004_id": "1865",
+  "chain": "celo",
+  "chain_id": 42220,
+  "endpoints": {
+    "api": "https://agenticeye.co/analyze",
+    "web": "https://agenticeye.co",
+    "mcp": "https://agenticeye.co/mcp",
+    "a2a": "https://agenticeye.co/.well-known/agent-card.json",
+    "skill": "https://agenticeye.co/skill.md"
+  },
+  "supported_tools": [
+    "viral_score",
+    "hook_analysis",
+    "trend_detection",
+    "competitor_gap",
+    "title_generation",
+    "audio_transcription",
+    "daily_brief"
+  ],
+  "task_categories": [
+    "content_intelligence",
+    "viral_prediction",
+    "trend_analysis",
+    "competitor_analysis",
+    "hook_scoring"
+  ],
+  "payment": {
+    "protocol": "x402",
+    "tokens": ["cUSD", "USDC", "USDT"],
+    "network": "celo-mainnet",
+    "wallet": "0x02e97e243204780842d5cA34dFEF465A959b18b3"
+  },
+  "privacy": "venice-tei-zero-retention",
+  "identity": {
+    "self_agent_id": "52",
+    "self_verified": true,
+    "zk_credentials": ["nationality", "ofac_check", "biometric"]
+  },
+  "data_sources": 17,
+  "viralEdge_version": "3.2",
+  "cooperation": {
+    "protocol": "a2a",
+    "partner": "loopuman.com",
+    "partner_agent_id": "17"
+  },
+  "8004scan": "https://8004scan.io/agents/celo/1865"
+}
